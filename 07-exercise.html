@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>lesson 7 exercise-function</title>
+  </head>
+  <body>
+    <script>
+      /* 7a. ////////////
+
+              function greet(){
+                      console.log('Hello!');
+                  }
+                  greet();
+                  */
+
+      /*======7b.======  */
+
+      // passing a parameter
+      /*  function greet(name){
+                          console.log(`Hello! ${name}`);
+
+                      }
+
+                      greet('sanish'); */
+
+      /**************** 7c.**************/
+
+      /* function greet(name) {
+
+              if (!name) {
+                console.log("Hi there!");
+              }
+            }
+
+            greet();*/
+
+      //----------7d. ---------//
+
+      /*
+
+      function convertToFahrenheit(celsius){
+         return (celsius*9/5)+32
+      }
+
+       const result =convertToFahrenheit(25)
+       console.log(result);
+
+
+      */
+
+      //---------7e---------//
+
+      /*function convertToCelsius(Fahrenheit){
+         return (Fahrenheit-32)*5/9;
+      }
+
+       const result =convertToCelsius(86)
+       console.log(result);*/
+
+      //----------------7f-----------//
+      //convert Temperature (86,'F')=>'77F'
+
+      function convertToFahrenheit(celcius) {
+        return (celcius * 9) / 5 + 32;
+      }
+
+      function convertToCelcius(Fahrenheit) {
+        return ((Fahrenheit - 32) * 5) / 9;
+      }
+
+      function convertTemperature(degrees, unit) {
+        if (unit === "C") {
+          const temperature = convertToFahrenheit(degrees)
+          return `${temperature}C`;
+        } else if (unit === "F") {
+          const temperature = convertToCelcius(degrees) 
+          return `${temperature}F`;
+        }
+      }
+
+      console.log(convertTemperature(25, "C"));
+      console.log(convertTemperature(86, "F"));
+    </script>
+  </body>
+</html>
