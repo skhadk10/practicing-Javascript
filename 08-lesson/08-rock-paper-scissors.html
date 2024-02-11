@@ -35,16 +35,21 @@
         Reset Score
       </button>
       <script>
-        let score = JSON.parse(localStorage.getItem("score"));
-// when the score is remove from localStorage
-// then score will be null so we do this
-        if (!score) {
+        let score = JSON.parse(localStorage.getItem("score")) || {
+          wins: 0,
+          losses: 0,
+          ties: 0,
+        };
+        // when the score is remove from localStorage
+        // then score will be null so we do this
+        /*  if (!score) {
           score = {
             wins: 0,
             losses: 0,
             ties: 0,
           };
-        }
+        }*/
+
         function playGame(playerMove) {
           const computerMove = pickComputerMove();
 

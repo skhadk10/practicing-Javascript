@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>8e-8h exercise</title>
+  </head>
+  <body>
+    <script>
+      //8h
+
+      const product1 = {
+        name: "ball",
+        price: 80,
+      };
+      const product2 = {
+        name: "money",
+        price: 100,
+      };
+
+      function isSameProduct(product1, product2) {
+        if (
+          product1.name === product2.name &&
+          product1.price === product2.price
+        ) {
+          console.log("product are equal");
+        } else {
+          console.log(false);
+        }
+      }
+
+      isSameProduct(product1, product2);
+
+      //8f
+      const product = {
+        name: "SANISH",
+      };
+
+      let lowerName = product.name.toLowerCase();
+      product.name = lowerName;
+      console.log(product);
+
+      //8g
+      let text = "hello"
+      console.log(text.repeat(2));
+    </script>
+  </body>
+</html>

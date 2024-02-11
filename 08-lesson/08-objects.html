@@ -21,7 +21,7 @@
         
         delete product.newProperty; // delete new property
         console.log(product);*/
-
+/*
         const product2 = {
           name: "shirt",
           "delivery-time": "1-day",
@@ -47,7 +47,50 @@
 
         // built in JSON objectconvert into JS object
         const jsonString = JSON.stringify(product2);
-        console.log(JSON.parse(jsonString));
+        console.log(JSON.parse(jsonString));*/
+
+
+// learn more about object===method
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());;
+        // learning about object references
+        const object1={
+          message:'hello',
+        }
+        const object2=object1;
+        object1.message='Good job!'
+        console.log(object1);
+
+        const object3={
+          message:'Good job`',
+        }
+        
+        console.log(object1===object3);
+        console.log(object1===object2);
+// shortcut
+        const object4={
+          message:'Good job',
+          price:799
+        }
+        //destructing object
+        // const message=object4.message
+        const {message,price}=object4
+        console.log(message);
+        console.log(price);
+// if porperty and variable name is same we just type message or similar name
+        const object5={
+          // message:message
+          message,
+          // method:function finction1(){
+          //   console.log('method');
+          // } 
+          //shortcut
+          method(){
+            console.log('method');
+          }
+        }
+        console.log(object5);
+        object5.method()
       </script>
     </body>
   </head>

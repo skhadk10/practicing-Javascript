@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coin flip game</title>
+  </head>
+  <body>
+    <button
+      onclick="
+     playGame('head')
+
+    "
+    >
+      head
+    </button>
+    <button
+      onclick="
+    playGame('tails')
+
+    "
+    >
+      tails
+    </button>
+    <script>
+      const score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        looses: 0,
+      };
+      function playGame(guess) {
+        const headTailPossible = coinFlipPossibilities();
+        result = "";
+        if (guess === "head") {
+          if (headTailPossible === "head") {
+            result = "You win";
+          } else if (headTailPossible === "tails") {
+            result = "You looses";
+          }
+        }
+
+        if (guess === "tails") {
+          if (headTailPossible === "tails") {
+            result = "You win";
+          } else if (headTailPossible === "head") {
+            result = "You looses";
+          }
+        }
+        if (result === "You win") {
+          score.wins += 1;
+        } else if (result === "You looses") {
+          score.looses += 1;
+        }
+        localStorage.setItem("score", JSON.stringify(score));
+        alert(
+          ` You selected ${guess}. computer selected ${headTailPossible}. wins: ${score.wins}, losses:${score.looses} `
+        );
+      }
+      function coinFlipPossibilities() {
+        let randomNumber = Math.random();
+        let possibility = "";
+        if (randomNumber > 0.5) {
+          possibility = "head";
+        } else if (randomNumber < 0.5) {
+          possibility = "tails";
+        }
+        console.log(possibility);
+        return possibility;
+      }
+    </script>
+  </body>
+</html>
