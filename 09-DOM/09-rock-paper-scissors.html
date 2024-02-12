@@ -22,18 +22,26 @@
 
       <button
         onclick="
+       
         playGame('scissors')
       "
       >
         Scissors
       </button>
+      <p class="js-result"></p>
+      <p class="js-moves"></p>
+      <p class="js-score"></p>
       <button
-        onclick="
+        onclick=" score.wins=0;
+        score.losses=0;
+        score.ties=0;
         localStorage.removeItem('score')
+        updateScoreElement();
       "
       >
         Reset Score
       </button>
+
       <script>
         let score = JSON.parse(localStorage.getItem("score")) || {
           wins: 0,
@@ -41,7 +49,14 @@
           ties: 0,
         };
 
-        
+        updateScoreElement();
+
+        document.querySelector(".js-result").innerHTML = result;
+
+        document.querySelector(
+          ".js-moves"
+        ).innerHTML = `You ${playerMove}- ${computerMove} Computer`;
+
         // when the score is remove from localStorage
         // then score will be null so we do this
         /*  if (!score) {
@@ -91,11 +106,25 @@
           } else if (result === "Tie") {
             score.ties += 1;
           }
+          //   store the score data in localstorage in JSON format
           localStorage.setItem("score", JSON.stringify(score));
 
-          alert(
-            `You picked ${playerMove}. computer picked ${computerMove}. ${result}\n Wins ${score.wins} Losses ${score.losses} Tie ${score.ties}`
-          );
+          updateScoreElement();
+
+          document.querySelector(".js-result").innerHTML = result;
+
+          document.querySelector(
+            ".js-moves"
+          ).innerHTML = `You ${playerMove}- ${computerMove} Computer`;
+
+        
+        }
+
+        function updateScoreElement() {
+          //   update the score in webpage
+          document.querySelector(
+            ".js-score"
+          ).innerHTML = `Wins: ${score.wins}, Loose: ${score.losses},ties: ${score.ties}`;
         }
         function pickComputerMove() {
           // when we click rock then computer generate a random no. and selects a move
