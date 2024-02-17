@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>9a-9c exercise</title>
+  </head>
+  <body>
+    <!-- 9c -->
+    <button onclick="clickHeadTail('head')">head</button>
+
+    <button onclick="clickHeadTail('tail')">tail</button>
+    <p class="js-result"></p>
+  </body>
+  <script>
+    function clickHeadTail(value) {
+      if (value === "head") {
+        document.querySelector(".js-result").innerHTML = `You chose: ${value}`;
+      } else {
+        document.querySelector(".js-result").innerHTML = `You chose: ${value}`;
+      }
+    }
+  </script>
+</html>
