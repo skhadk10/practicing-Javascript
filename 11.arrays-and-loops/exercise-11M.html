@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>exercise 11M</title>
+  </head>
+  <body>
+    <script>
+      // 11l
+
+      function minMax(nums) {
+        let result = {
+          min: null,
+          max: null,
+        };
+        for (let i = 0; i < nums.length; i++) {
+          // nums[i] is a value of index, if i is 0 then in array of nums the value will be 1, if 2 then -3.
+          const value = nums[i];
+          if (result.max === null || value < result.min) {
+            result.min = value;
+          }
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+        }
+        return result;
+      }
+
+      console.log(minMax([]));
+      console.log(minMax([3]));
+    </script>
+  </body>
+</html>
