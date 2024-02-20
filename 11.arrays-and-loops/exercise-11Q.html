@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>exercise 11Q</title>
+  </head>
+  <body>
+    <script>
+      // 11Q
+
+      // create a function findIndex(Array, word) that searches an array for a string (in the 'word' parameter) and returns the index of the first appearance of the string. if it doesnot exist in the array, returns -1.
+      //  word ma vako search gar vanya xa array vetra saki nai vanyera red and yellow array ma xa ki nai check gar
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          const string = array[i];
+          if (string === word) {
+            console.log(1);
+          } else {
+            console.log(-1);
+          }
+        }
+      }
+      findIndex(["green", "red", "blue", "red"], "red");
+      findIndex(["green", "red", "blue", "red"], "yellow");
+    </script>
+  </body>
+</html>

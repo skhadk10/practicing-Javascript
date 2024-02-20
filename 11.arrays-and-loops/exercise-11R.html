@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>exercise 11R</title>
+  </head>
+  <body>
+    <script>
+      // 11R
+
+      // Create a function removeEgg(foods) that takes an array of strings and returns an array where the string 'egg' is removed.
+
+      function removeEgg(foods) {
+        const foodRemoved = [];
+
+        for (let i = 0; i < foods.length; i++) {
+          const food = foods[i];
+          if (food === "egg") {
+            continue;
+          }
+          foodRemoved.push(food);
+          console.log(foodRemoved);
+        }
+      }
+
+      removeEgg(["egg", "apple", "egg", "egg", "ham"]);
+    </script>
+  </body>
+</html>

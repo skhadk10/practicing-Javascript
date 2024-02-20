@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>exercise 11O</title>
+  </head>
+  <body>
+    <script>
+      // 11O
+
+      // create an array of strings, loop over the array, and check if the string 'search'is inside the array.
+
+      function testString(arrayString) {
+        for (let i = 0; i < arrayString.length; i++) {
+          const string = arrayString[i];
+          if (string === "search") {
+            console.log(i);
+          } else if (string !== "search") {
+            console.log(-1);
+          }
+        }
+      }
+      testString(["hello", "world", "search", "good"]);
+      testString(["not", "found"]);
+    </script>
+  </body>
+</html>

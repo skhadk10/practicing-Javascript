@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>exercise 11P</title>
+  </head>
+  <body>
+    <script>
+      // 11P
+
+      // Modify 11o so that if 'search' appears multiple times in the array, it will console.log the index of the first appearance of 'search'. use break;
+
+      function testString(arrayString) {
+        for (let i = 0; i < arrayString.length; i++) {
+          const string = arrayString[i];
+          if (string === "search") {
+            console.log(i);
+            break;
+          }
+        }
+      }
+      testString(["hello", "world", "search", "good"]);
+      // testString(["not", "found"]);
+    </script>
+  </body>
+</html>

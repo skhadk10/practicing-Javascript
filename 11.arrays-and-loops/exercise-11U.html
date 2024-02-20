@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>exercise 11U</title>
+  </head>
+  <body>
+    <script>
+      // 11U
+
+      // Create a function removeEgg(foods) that takes an array of strings and remove the fist 2 eggs from the array. and update using reverse function
+
+      function removeEgg(foods) {
+        const result = [];
+        let eggsRemoved = 0;
+        // To prevent modifying the original array, we
+        // can create a copy of the array using .slice()
+        const foodSplice = foods.splice();
+        const foodReversed = foodSplice.reverse();
+        // Advanced technique:
+        // Since foods.slice() results in an array, we
+        // can also use .reverse() directly like this:
+        // foods.slice().reverse();
+
+        // This technique is called "method chaining"
+        // because we use one method after another
+        // (like a chain of methods).
+        for (let i = 0; i < foodReversed.length; i++) {
+          let food = foodReversed[i];
+          // Only skip 'egg' if we removed less than 2
+          // of them so far.
+
+          if (food === "egg" && eggsRemoved < 2) {
+            // Update the number of 'egg' we have removed.
+            // This must be done before continue, otherwise,
+            // doing continue first will just skip this code.
+
+            eggsRemoved++;
+            continue;
+          }
+          result.push(food);
+       
+        }
+          
+       return result.reverse();
+      }
+
+      const food = ["egg", "apple", "egg", "egg", "ham"];
+      console.log(removeEgg(food));
+      console.log(food);
+    </script>
+  </body>
+</html>
